@@ -16,7 +16,7 @@
         <li><a href="#testing">Testing</a></li>
       </ul>
     </li>
-    <li><a href="#potential-improvements">Potential Improvements</a></li>
+    <li><a href="#potential-improvements--alternative-design-choices">Potential Improvements / Alternative Design Choices</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -102,6 +102,12 @@ The project is packaged with simple unit tests designed to test the sanity and f
    pytest war-tests.py
    ```
 
+<!-- POTENTIAL IMPROVEMENTS -->
+## Potential Improvements / Alternative Design Choices
+1. The backend for this project currently simulates the game between two players. This could be extended to accommodate more players by adapting to a different version of the game. Currently a variation of the regular version is implemented to handle and avoid infinite sessions of the game. The current fix includes declaring the game as a draw in case the number of cards in each players deck toggles between two fixed values for a threshold number of rounds. While this variation is a reasonable fix, alternate versions could be explored.
+2. The backend and db for this game have been dockerized and packaged as a unit which can be brought up and down easily. The UI is a separate service, which runs independently. While this decoupling was a design choice, the three services could be dockerized and brought up finally exposing only the UI to the users. These services could also be deployed and orchestrated using tools such as Kubernetes on a cloud platform.
+3. Finally, the UI could be improved to show the cards in play dynamically. However, observing the number of rounds these games typically last for, this may not be viable. Other improvements such as beautification of the UI could be potential directions to explore.
+
 <!-- CONTACT -->
 ## Contact
 
@@ -109,11 +115,6 @@ Arjun Manjunatha Rao | [LinkedIn](https://www.linkedin.com/in/arjun-manjunatha-r
 
 Project Link: [https://github.com/arjun120/war-card-game](https://github.com/arjun120/war-card-game)
 
-<!-- POTENTIAL IMPROVEMENTS -->
-## Potential Improvements / Alternative Design Choices
-1. The backend for this project currently simulates the game between two players. This could be extended to accommodate more players by adapting to a different version of the game. Currently a variation of the regular version is implemented to handle and avoid infinite sessions of the game. The current fix includes declaring the game as a draw in case the number of cards in each players deck toggles between two fixed values for a threshold number of rounds. While this variation is a reasonable fix, alternate versions could be explored.
-2. The backend and db for this game have been dockerized and packaged as a unit which can be brought up and down easily. The UI is a separate service, which runs independently. While this decoupling was a design choice, the three services could be dockerized and brought up finally exposing only the UI to the users. These services could also be deployed and orchestrated using tools such as Kubernetes on a cloud platform.
-3. Finally, the UI could be improved to show the cards in play dynamically. However, observing the number of rounds these games typically last for, this may not be viable. Other improvements such as beautification of the UI could be potential directions to explore.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
