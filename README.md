@@ -13,7 +13,6 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#testing">Testing</a></li>
       </ul>
     </li>
     <li><a href="#potential-improvements--alternative-design-choices">Potential Improvements / Alternative Design Choices</a></li>
@@ -49,9 +48,11 @@ The major frameworks/libraries used in this project are as listed below:
 ## Getting Started
 
 ### Prerequisites
-The backend flask server and mysql server are dockerized to run in two containers. Prior to setting up and running the backend and mysql server, make sure you have [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/) installed and setup. The installation guide for the docker engine can be found [here](https://docs.docker.com/engine/install/). For docker-compose, you can visit [this](https://docs.docker.com/compose/install/) page. Follow the instructions on these pages carefully and verify the installation and the version at the end.
+The backend flask server and mysql server are dockerized to run in two containers. Prior to setting up and running the backend and mysql server, make sure you have [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/) installed and setup. The installation guide for the docker engine can be found [here](https://docs.docker.com/engine/install/). Docker-compose is installed with the desktop version of docker engine, you can visit [this](https://docs.docker.com/compose/install/) page for more information. Follow the instructions on these pages carefully and verify the installation and the version at the end.
 
-For the frontend, make sure Node and NPM are installed on your computer. You can download both at [this](nodejs.org) link (NPM is included in your Node installation).
+For the frontend, make sure Node and NPM are installed on your computer. You can download both at [this](https://nodejs.org/en) link (NPM is included in your Node installation).
+
+Note: The following commands and installation steps have been tested on MacOS.
 
 ### Installation
 
@@ -63,7 +64,7 @@ Once you have verified docker-compose and npm are installed and working correctl
    git clone https://github.com/arjun120/war-card-game.git
    ```
 2. ```sh
-   cd war
+   cd war-card-game
    ```
 3. Here, you can use `docker-compose` to build the images and start the containers for the backend and SQL db. 
    ```sh
@@ -84,23 +85,6 @@ Once you have verified docker-compose and npm are installed and working correctl
    ```
    Replace the `127.0.0.1` with the DNS of the container depending on where your backend service is running. 
 9. Now, you have successfully installed and run the war game. You should be able to access the game at [http://localhost:3000/](http://localhost:3000/).
-
-### Testing
-
-The project is packaged with simple unit tests designed to test the sanity and functionality of the backend endpoints. Use the following instructions to run these tests (NOTE: If you are running these locally, you need to install the requirements locally outside of your container running the backend.):
-
-1. If you need to install the requirements, you can run the following:
-   ```sh
-   pip install requirements.txt
-   ```
-2. Navigate to the directory containing the files for the backend.
-   ```sh
-   cd war/war-backend
-   ```
-3. Finally, run the tests using `pytest` as follows:
-   ```sh
-   pytest war-tests.py
-   ```
 
 <!-- POTENTIAL IMPROVEMENTS -->
 ## Potential Improvements / Alternative Design Choices
