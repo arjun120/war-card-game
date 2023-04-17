@@ -1,0 +1,20 @@
+version: '2'
+services:
+  war-backend:
+    build: ./war-backend
+    depends_on:
+      - war-db
+    ports:
+      - "4000:4000"
+    environment:
+      - DB_HOST=war-db
+      - DB_PASSWORD=password
+      - DB_USERNAME=root
+  war-db:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./war-db:/docker-entrypoint-initdb.d/:ro
